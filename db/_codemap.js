@@ -9,4 +9,4 @@ module.exports = {
   'resume_markers': require('./resume_markers'),
   'sessions': require('./sessions'),
   'trades': require('./trades')
-}
+};

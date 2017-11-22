@@ -1,26 +1,30 @@
-var codemap = require('codemap')
+let codemap = require('codemap');
+
+/*let talib = require('talib');
+var function_desc = talib.explain("BBANDS");
+console.log(function_desc);*/
 
 module.exports = function () {
-  var rootMap = {
+  let rootMap = {
     _maps: [require('./_codemap')],
 
     'get': function container (get, set) {
-      return get
+      return get;
     },
     'set': function container (get, set) {
-      return set
+      return set;
     },
     'use': function container (get, set) {
       return function use () {
-        ;[].slice.call(arguments).forEach(function (arg) {
-          instance.parseMap(arg)
-        })
-        instance.validatePathCache()
-      }
+        [].slice.call(arguments).forEach(function (arg) {
+          instance.parseMap(arg);
+        });
+        instance.validatePathCache();
+      };
     }
-  }
-  var instance = codemap(rootMap)
-  return instance.export()
-}
+  };
+  let instance = codemap(rootMap);
+  return instance.export();
+};
 
-module.exports.version = require('./package.json').version
+module.exports.version = require('./package.json').version;
